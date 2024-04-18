@@ -56,7 +56,7 @@ const ChapterIdPage = async ({
       {isLocked && (
         <Banner
           variant="warning"
-          label="Чтобы пройти этот курс бесплатно, вам необходимо зарегистрироваться на сайте."
+          label="Во время тестирования все курсы бесплатны"
         />
       )}
       <div className="flex flex-col max-w-6xl mx-auto pb-20">
