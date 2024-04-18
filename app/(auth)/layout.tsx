@@ -21,7 +21,7 @@ const AuthLayout = ({
                         Learning Management System
                     </h1>
                     <p className="text-lg text-gray-500">
-                        Разработано командой 
+                        разработано командой 
                         <a href="https://www.instagram.com/divergents.kz/" className="text-blue-700 ml-2">
                             Divergents.kz
                         </a>
