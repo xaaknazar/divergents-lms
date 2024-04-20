@@ -30,7 +30,7 @@ export const NavbarRoutes = () => {
           <Link href="/search">
             <Button size="sm" variant="ghost"
                         style={{
-                          backgroundColor: "red",
+                          backgroundColor: "#1E293B",
                           color: "white",
                           border: "none",
                           padding: "10px 20px",
@@ -38,7 +38,7 @@ export const NavbarRoutes = () => {
                           fontWeight: "bold"
                         }}>
               <LogOut className="h-4 w-4 mr-2" />
-              Выход
+              На главную страницу
             </Button>
           </Link>
         ) : isTeacher(userId) ? (
