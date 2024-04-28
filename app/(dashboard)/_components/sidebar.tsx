@@ -34,12 +34,12 @@ export const Sidebar = () => {
             <div className="hidden md:block p-3.5"  style={{position: "absolute", bottom: "130px"}}>
                 <div className="rounded-lg border bg-card text-card-foreground shadow-none">
                     <div className="flex flex-col space-y-1.5 p-2 pt-0 md:p-4">
-                        <h3 className="font-semibold tracking-tight text-base">Support the LMS</h3>
-                        <p className="text-muted-foreground text-sm">To monthly payments for the server and storage for lessons..</p>
+                        <h3 className="font-semibold tracking-tight text-base">Поддержать проект LMS</h3>
+                        <p className="text-muted-foreground text-sm">Финансово помочь к ежемесячным платежам за сервер и хранилище для уроков..</p>
                 
                         </div>
                         <div className="p-2 pt-0 md:p-4 md:pt-0">
-                            <a className="inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full text-xs" href="/">Donate</a>
+                            <a className="inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full text-xs" href="https://wa.me/7085362570">Donate</a>
                         </div>
                     </div>
                 </div>   
