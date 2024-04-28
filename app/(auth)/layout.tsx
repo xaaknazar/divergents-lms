@@ -7,7 +7,7 @@ const AuthLayout = ({
         <div className="min-h-screen bg-gray-50 flex justify-center items-center">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto p-6 md:p-12 shadow-xl rounded-lg bg-white">
                 {/* Auth children (форма входа) */}
-                <div className="flex flex-col justify-center p-6">
+                <div className="flex flex-col justify-center p-1">
                     {children}
                 </div>
                 {/* Сайдбар с лого и информацией */}
