@@ -35,7 +35,7 @@ export const Sidebar = () => {
                 <div className="rounded-lg border bg-card text-card-foreground shadow-none">
                     <div className="flex flex-col space-y-1.5 p-2 pt-0 md:p-4">
                         <h3 className="font-semibold tracking-tight text-base">Поддержать проект LMS</h3>
-                        <p className="text-muted-foreground text-sm">Финансово помочь к ежемесячным платежам за сервер и хранилище для уроков..</p>
+                        <p className="text-muted-foreground text-sm">Финансовая помощь для оплаты сервера и хранилища уроков</p>
                 
                         </div>
                         <div className="p-2 pt-0 md:p-4 md:pt-0">
