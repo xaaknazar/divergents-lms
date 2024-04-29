@@ -9,7 +9,7 @@ import { ConfettiProvider } from '@/components/providers/confetti-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Divergents',
+  title: 'Divergents LMS',
   description: 'xaknazar developer',
 }
 
