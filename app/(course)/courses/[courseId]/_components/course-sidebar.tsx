@@ -1,5 +1,5 @@
 import { auth } from "@clerk/nextjs";
-import { Chapter, Course, UserProgress } from "@prisma/client"
+import { Chapter, Course, UserProgress } from "@prisma/client";
 import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
@@ -51,7 +51,7 @@ export const CourseSidebar = async ({
           </div>
         )}
       </div>
-      <div className="relative overflow-hidden flex flex-col w-full">
+      <div className="flex-grow relative overflow-y-auto">
         {course.chapters.map((chapter: { id: string; title: string; userProgress: { isCompleted: any; }[]; isFree: any; }) => (
           <CourseSidebarItem
             key={chapter.id}
