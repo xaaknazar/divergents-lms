@@ -27,11 +27,13 @@ export const CourseMobileSidebar = ({
       <SheetTrigger className="md:hidden pr-4 hover:opacity-75 transition">
         <Menu />
       </SheetTrigger>
-      <SheetContent side="left" className="p-0 bg-white w-72">
-        <CourseSidebar
-          course={course}
-          progressCount={progressCount}
-        />
+      <SheetContent side="left" className="p-0 bg-white w-72 overflow-y-auto">
+        <div style={{ maxHeight: "calc(100vh - 64px)" }}> {/* 64px для учета верхнего меню */}
+          <CourseSidebar
+            course={course}
+            progressCount={progressCount}
+          />
+        </div>
       </SheetContent>
     </Sheet>
   )
