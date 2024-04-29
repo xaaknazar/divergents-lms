@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Divergents LMS',
-  description: 'xaknazar developer',
+  description: 'Learning Management System',
 }
 
 export default function RootLayout({
