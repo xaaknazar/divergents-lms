@@ -56,12 +56,13 @@ const ChapterIdPage = async ({
       {isLocked && (
         <Banner
           variant="warning"
-          label="Во время тестирования все курсы бесплатны"
+          label="При тестировании проекта все курсы бесплатны"
         />
       )}
       <div className="flex flex-col max-w-6xl mx-auto pb-20">
         <div className="p-4">
           <VideoPlayer
+            autoPlay={false}
             chapterId={params.chapterId}
             title={chapter.title}
             courseId={params.courseId}
