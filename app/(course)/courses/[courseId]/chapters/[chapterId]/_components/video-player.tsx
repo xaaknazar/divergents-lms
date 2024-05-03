@@ -84,7 +84,6 @@ export const VideoPlayer = ({
           autoPlay={autoPlay}
           playbackId={playbackId}
           playsInline={true}
-          controls={true}
         />
       )}
     </div>
