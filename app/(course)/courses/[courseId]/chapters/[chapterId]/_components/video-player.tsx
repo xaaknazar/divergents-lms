@@ -83,7 +83,7 @@ export const VideoPlayer = ({
           onEnded={onEnd}
           autoPlay={autoPlay}
           playbackId={playbackId}
-          playsInline={false}
+          playsInline={true}
         />
       )}
     </div>
