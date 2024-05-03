@@ -1,8 +1,6 @@
-"use client";
-
 import axios from "axios";
 import MuxPlayer from "@mux/mux-player-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Loader2, Lock } from "lucide-react";
@@ -32,8 +30,19 @@ export const VideoPlayer = ({
   autoPlay,
 }: VideoPlayerProps) => {
   const [isReady, setIsReady] = useState(false);
+  const [loadingTime, setLoadingTime] = useState<number | null>(null);
   const router = useRouter();
   const confetti = useConfettiStore();
+
+  useEffect(() => {
+    const startTime = performance.now();
+    return () => {
+      if (loadingTime === null) {
+        const endTime = performance.now();
+        setLoadingTime(endTime - startTime);
+      }
+    };
+  }, []);
 
   const onEnd = async () => {
     try {
@@ -74,7 +83,7 @@ export const VideoPlayer = ({
         </div>
       )}
       {!isLocked && (
-        <MuxPlayer
+        <MuxPlayer 
           title={title}
           className={cn(
             !isReady && "hidden"
@@ -85,6 +94,9 @@ export const VideoPlayer = ({
           playbackId={playbackId}
           playsInline={true}
         />
+      )}
+      {loadingTime !== null && (
+        <p>Video loading time: {loadingTime} ms</p>
       )}
     </div>
   )
