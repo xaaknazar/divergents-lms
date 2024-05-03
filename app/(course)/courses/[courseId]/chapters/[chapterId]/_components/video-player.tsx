@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
 
 interface VideoPlayerProps {
+  autoPlay: boolean;
   playbackId: string;
   courseId: string;
   chapterId: string;
@@ -28,6 +29,7 @@ export const VideoPlayer = ({
   isLocked,
   completeOnEnd,
   title,
+  autoPlay,
 }: VideoPlayerProps) => {
   const [isReady, setIsReady] = useState(false);
   const router = useRouter();
@@ -79,7 +81,7 @@ export const VideoPlayer = ({
           )}
           onCanPlay={() => setIsReady(true)}
           onEnded={onEnd}
-          autoPlay
+          autoPlay={autoPlay}
           playbackId={playbackId}
         />
       )}
