@@ -5,13 +5,11 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Loader2, Lock } from "lucide-react";
-@@ -30,20 +32,9 @@ export const VideoPlayer = ({
-  autoPlay,
-}: VideoPlayerProps) => {
-  const [isReady, setIsReady] = useState(false);
-  const [loadingTime, setLoadingTime] = useState<number | null>(null);
-  const router = useRouter();
-  const confetti = useConfettiStore();
+
+const [isReady, setIsReady] = useState(false);
+const [loadingTime, setLoadingTime] = useState<number | null>(null);
+const router = useRouter();
+const confetti = useConfettiStore();
 
   useEffect(() => {
     const startTime = performance.now();
