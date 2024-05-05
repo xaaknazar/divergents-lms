@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router"; // Исправлен импорт
 import { Loader2, Lock } from "lucide-react";
 import MuxPlayer from "@mux/mux-player-react";
 
@@ -16,22 +16,26 @@ export const VideoPlayer = ({
   const router = useRouter();
 
   useEffect(() => {
-    const startTime = performance.now();
+    let startTime: number | null = null; // Инициализируем startTime
+    if (!loadingTime) {
+      startTime = performance.now(); // Установка startTime только если loadingTime равен null
+    }
     return () => {
-      if (loadingTime === null) {
+      if (startTime && loadingTime === null) {
         const endTime = performance.now();
-        setLoadingTime(endTime - startTime);
+        setLoadingTime(endTime - startTime); // Устанавливаем loadingTime только если оно не установлено ранее
       }
     };
-  }, []);
+  }, [loadingTime]); // Добавляем loadingTime в зависимости, чтобы useEffect срабатывал при его изменении
 
   const onEnd = async () => {
     try {
       if (completeOnEnd) {
-        // Your logic for completion
+        // Ваша логика для завершения
+        console.log("Воспроизведение завершено");
       }
     } catch (error) {
-      // Handle error
+      console.error("Ошибка при завершении воспроизведения:", error);
     }
   };
 
@@ -50,7 +54,7 @@ export const VideoPlayer = ({
             className={!isReady ? "hidden" : ""}
           />
           {loadingTime !== null && (
-            <p>Video loading time: {loadingTime} ms</p>
+            <p>Время загрузки видео: {loadingTime} мс</p> // Исправлен текст
           )}
         </>
       )}
