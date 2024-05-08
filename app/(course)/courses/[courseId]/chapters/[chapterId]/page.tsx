@@ -50,7 +50,7 @@ const ChapterIdPage = async ({
       {userProgress?.isCompleted && (
         <Banner
           variant="success"
-          label="Вы завершили этот урок"
+          label="Вы завершили этот урок."
         />
       )}
       {isLocked && (
@@ -61,7 +61,7 @@ const ChapterIdPage = async ({
       )}
       <div className="flex flex-col max-w-6xl mx-auto pb-20">
         <div className="p-4">
-          <VideoPlayer
+          <VideoPlayer 
             chapterId={params.chapterId}
             title={chapter.title}
             courseId={params.courseId}
