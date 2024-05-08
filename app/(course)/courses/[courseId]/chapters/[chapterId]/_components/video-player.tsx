@@ -78,8 +78,6 @@ export const VideoPlayer = ({
                         !isReady && "hidden"
                     )}
                     onCanPlay={() => setIsReady(true)}
-                    autoPlay={true}
-                    muted={true}
                     loop={true}
                     onEnded={onEnd}
                     playbackId={playbackId}
