@@ -78,9 +78,12 @@ export const VideoPlayer = ({
                         !isReady && "hidden"
                     )}
                     onCanPlay={() => setIsReady(true)}
+                    autoPlay={autoPlay}
+                    muted={true}
+                    loop={true}
                     onEnded={onEnd}
-                    autoPlay
                     playbackId={playbackId}
+                    playsInline={true}
                 />
             )}
         </div>
