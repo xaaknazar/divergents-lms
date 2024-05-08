@@ -62,7 +62,6 @@ const ChapterIdPage = async ({
       <div className="flex flex-col max-w-6xl mx-auto pb-20">
         <div className="p-4">
           <VideoPlayer
-            autoPlay={false}
             chapterId={params.chapterId}
             title={chapter.title}
             courseId={params.courseId}
@@ -70,6 +69,7 @@ const ChapterIdPage = async ({
             playbackId={muxData?.playbackId!}
             isLocked={isLocked}
             completeOnEnd={completeOnEnd}
+            playsInline={true}
           />
         </div>
         <div>
