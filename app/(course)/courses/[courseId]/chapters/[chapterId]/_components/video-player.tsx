@@ -18,6 +18,7 @@ interface VideoPlayerProps {
     isLocked: boolean;
     completeOnEnd: boolean;
     title: string;
+    playsInline: boolean;
   }
 
 export const VideoPlayer = ({
@@ -28,6 +29,8 @@ export const VideoPlayer = ({
     isLocked,
     completeOnEnd,
     title,
+    playsInline,
+    
 }: VideoPlayerProps) => {
     const [isReady, setIsReady] = useState(false);
     const router = useRouter();
@@ -78,6 +81,8 @@ export const VideoPlayer = ({
                         !isReady && "hidden"
                     )}
                     onCanPlay={() => setIsReady(true)}
+                    autoPlay={true}
+                    muted={true}
                     loop={true}
                     onEnded={onEnd}
                     playbackId={playbackId}
