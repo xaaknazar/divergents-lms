@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import MuxPlayer from "@mux/mux-player-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Loader2, Lock } from "lucide-react";
@@ -19,7 +19,7 @@ interface VideoPlayerProps {
     completeOnEnd: boolean;
     title: string;
     playsInline: boolean;
-  }
+}
 
 export const VideoPlayer = ({
     playbackId,
@@ -30,11 +30,18 @@ export const VideoPlayer = ({
     completeOnEnd,
     title,
     playsInline,
-    
 }: VideoPlayerProps) => {
     const [isReady, setIsReady] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0);
     const router = useRouter();
     const confetti = useConfettiStore();
+
+    useEffect(() => {
+        const savedTime = localStorage.getItem(`video-time-${chapterId}`);
+        if (savedTime) {
+            setCurrentTime(Number(savedTime));
+        }
+    }, [chapterId]);
 
     const onEnd = async () => {
         try {
@@ -58,6 +65,11 @@ export const VideoPlayer = ({
             toast.error("Something went wrong");
         }
     }
+
+    const handleTimeUpdate = (e: any) => {
+        const currentTime = e.target.currentTime;
+        localStorage.setItem(`video-time-${chapterId}`, currentTime.toString());
+    };
 
     return (
         <div className="relative aspect-video">
@@ -86,8 +98,11 @@ export const VideoPlayer = ({
                     onEnded={onEnd}
                     playbackId={playbackId}
                     playsInline={true}
+                    onTimeUpdate={handleTimeUpdate}
+                    currentTime={currentTime}
                 />
             )}
         </div>
     )
 }
+
