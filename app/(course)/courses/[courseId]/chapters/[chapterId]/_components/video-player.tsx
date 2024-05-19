@@ -45,8 +45,15 @@ export const VideoPlayer = ({
 
     useEffect(() => {
         document.title = title;
+        const favicon = document.querySelector('link[rel="icon"]') as HTMLLinkElement;
+        const originalFavicon = favicon ? favicon.href : '/favicon.ico';
+        if (favicon) {
+            favicon.href = './favicon.ico'; // Относительный путь к вашему favicon
+        }
         return () => {
-            document.title = "Divergents LMS"; // Установить обратно название сайта при размонтировании компонента
+            if (favicon) {
+                favicon.href = originalFavicon;
+            }
         };
     }, [title]);
 
