@@ -16,7 +16,7 @@ export const NavbarRoutes = () => {
 
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isCoursePage = pathname?.includes("/courses");
-  const isSearchPage = pathname === "/search";
+  const isSearchPage = pathname === "/";
 
   return (
     <>
@@ -27,7 +27,7 @@ export const NavbarRoutes = () => {
       )}
       <div className="flex items-center gap-x-2 ml-auto"> {/* Убедитесь, что items-center добавлено для вертикального выравнивания */}
         {isTeacherPage || isCoursePage ? (
-          <Link href="/search">
+          <Link href="/">
             <Button size="sm" variant="ghost"
                         style={{
                           backgroundColor: "#1E293B",
