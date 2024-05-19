@@ -43,6 +43,13 @@ export const VideoPlayer = ({
         }
     }, [chapterId]);
 
+    useEffect(() => {
+        document.title = title;
+        return () => {
+            document.title = "Divergents LMS"; // Установить обратно название сайта при размонтировании компонента
+        };
+    }, [title]);
+
     const onEnd = async () => {
         try {
             if (completeOnEnd) {
@@ -105,4 +112,3 @@ export const VideoPlayer = ({
         </div>
     )
 }
-
