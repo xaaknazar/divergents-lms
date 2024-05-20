@@ -11,7 +11,7 @@ import {
 } from 'react-icons/fc';
 import { IconType } from 'react-icons';
 
-import { CategoryItem } from "./category-item";
+import { CategoryItem, AllCategoriesButton } from "./category-item";
 
 interface CategoriesProps {
   items: Category[];
@@ -31,6 +31,7 @@ export const Categories = ({
 }: CategoriesProps) => {
   return (
     <div className="flex items-center gap-x-3 overflow-x-auto pb-2">
+      <AllCategoriesButton />
       {items.map((item) => (
         <CategoryItem
           key={item.id}
