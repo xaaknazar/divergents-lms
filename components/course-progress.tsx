@@ -9,14 +9,21 @@ interface CourseProgressProps {
 };
 
 const colorByVariant = {
+  default: "bg-sky-600", 
+  success: "bg-green-600",
+};
+
+const textColorByVariant = {
   default: "text-sky-700", 
-  success: "text-green-700", // Исправлено с text- на bg-
+  success: "text-green-700",
 };
 
 const sizeByVariant = {
   default: "text-sm",
   sm: "text-xs",
 };
+
+const uncompletedColor = "bg-sky-100"; // Цвет для невыполненного прогресса
 
 export const CourseProgress = ({
   value,
@@ -26,14 +33,25 @@ export const CourseProgress = ({
 }: CourseProgressProps) => {
   return (
     <div className={cn(className)}> {/* Применяем дополнительные классы к контейнеру */}
-      <Progress
-        className={cn("h-2", colorByVariant[variant])} // Применяем цвет в зависимости от варианта
-        value={value}
-        variant={variant}
-      />
+      <div className="relative w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+        <div
+          className={cn(
+            "absolute h-full rounded-full transition-width duration-300 ease-in-out",
+            colorByVariant[variant]
+          )}
+          style={{ width: `${value}%` }}
+        />
+        <div
+          className={cn(
+            "absolute h-full right-0 rounded-full transition-width duration-300 ease-in-out",
+            uncompletedColor
+          )}
+          style={{ width: `${100 - value}%` }}
+        />
+      </div>
       <p className={cn(
         "font-medium mt-2",
-        colorByVariant[variant], // Убран класс text-sky-700, т.к. цвет теперь определяется вариантом
+        textColorByVariant[variant],
         sizeByVariant[size],
       )}>
         {Math.round(value)}% Пройдено
