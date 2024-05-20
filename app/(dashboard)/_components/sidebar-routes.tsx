@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 
 const guestRoutes = [
     {
-        icon: Layout,
+        icon: Compass,
         label: "Обзор",
         href: "/",
         },
     {
-        icon: Compass,
+        icon: Layout,
         label: "Мои курсы",
         href: "/search",
     },
