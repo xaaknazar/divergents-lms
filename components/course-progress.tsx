@@ -10,7 +10,7 @@ interface CourseProgressProps {
 
 const colorByVariant = {
   default: "bg-sky-600", 
-  success: "bg-green-600",
+  success: "bg-green-700",
 };
 
 const textColorByVariant = {
