@@ -38,9 +38,8 @@ const ChapterIdPage = async ({
   });
 
   if (!chapter || !course) {
-    return redirect("/")
+    return redirect("/");
   }
-
 
   const isLocked = !chapter.isFree && !purchase;
   const completeOnEnd = !!purchase && !userProgress?.isCompleted;
@@ -70,12 +69,13 @@ const ChapterIdPage = async ({
             isLocked={isLocked}
             completeOnEnd={completeOnEnd}
             playsInline={true}
+            description={chapter.description || ""} // Pass the description here
           />
         </div>
         <div>
           <div className="border rounded-md p-6 flex flex-col lg:flex-row items-center justify-between bg-white">
             <h2 className="text-2xl font-semibold mb-2">
-              {chapter.title}
+              {"Отметить статус урока:"}
             </h2>
             {purchase ? (
               <CourseProgressButton
@@ -92,9 +92,6 @@ const ChapterIdPage = async ({
             )}
           </div>
           <Separator />
-          <div>
-            <Preview value={chapter.description!} />
-          </div>
           {!!attachments.length && (
             <>
               <Separator />
@@ -118,7 +115,7 @@ const ChapterIdPage = async ({
         </div>
       </div>
     </div>
-   );
+  );
 }
  
 export default ChapterIdPage;
