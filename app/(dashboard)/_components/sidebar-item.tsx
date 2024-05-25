@@ -1,59 +1,50 @@
-"use client"
+"use client";
 
-import { LucideIcon } from "lucide-react"
-import { usePathname,useRouter } from "next/navigation";
-
+import { LucideIcon } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-interface SidebarItemProps{
-    icon: LucideIcon;
-    label: string;
-    href: string;
-};
-export const SidebarItem = ({
-    icon: Icon,
-    label,
-    href,
-}: SidebarItemProps) => {
-    const pathname = usePathname();
-    const router = useRouter();
-
-    const isActive = 
-        (pathname === "/" && href === "/") ||
-        pathname === href ||
-        pathname?.startsWith('${href}/');
-
-    const onClick = () => {
-        router.push(href)
-    }
-
-    return (
-    <button
-        onClick={onClick}
-        type = "button"
-        className={cn(
-            "flex items-center py-1 gap-x-2 text-slate-500 text-sm font-[550] pl-6 transition-all hover:text-slate-600 hover:bg-slate-300/20",
-            isActive && "text-sky-800 bg-sky-200/20 hover:bg-sky-200/20 hover:text-sky-800 rounded-lg"
-        )}
-    >
-        <div className="flex items-center gap-x-2 py-4">
-            <Icon
-            size={24}
-            className={cn(
-                "text-slate-500",
-                isActive && "text-sky-700"
-            )}
-            />
-            {label}
-        </div>
-        <div
-        className={cn(
-            "ml-auto opacity-0 border-2 border-sky-700 h-full transition-all",
-            isActive && "opacity-100"
-
-        )}
-        />
-    </button>
-
-    )
+interface SidebarItemProps {
+  icon: LucideIcon;
+  label: string;
+  href: string;
 }
+
+export const SidebarItem = ({ icon: Icon, label, href }: SidebarItemProps) => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const isActive =
+    (pathname === "/" && href === "/") ||
+    pathname === href ||
+    pathname?.startsWith(`${href}/`);
+
+  const onClick = () => {
+    router.push(href);
+  };
+
+  return (
+    <button
+      onClick={onClick}
+      type="button"
+      className={cn(
+        "flex w-full text-sm items-center py-3.5 px-3 my-1 hover:bg-muted rounded-lg transition-background group", // добавлено my-2 для увеличения расстояния
+        isActive ? "bg-muted text-primary font-medium" : "text-muted-foreground"
+      )}
+    >
+      <Icon
+        size={26}
+        className={cn(
+          "mr-2",
+          isActive ? "text-primary animate-spin-once" : "text-muted-foreground"
+        )}
+      />
+      {label}
+      {label === "Reports" && (
+        <div className="inline-flex items-center border rounded-md px-2.5 py-0.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-sky-500/10 text-sky-800 ml-auto">
+          Скоро
+        </div>
+      )}
+    </button>
+  );
+};
