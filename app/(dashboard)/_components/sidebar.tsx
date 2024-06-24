@@ -16,7 +16,7 @@ export const Sidebar = () => {
             </div>
 
             <div className="p-3.5 flex items-center justify-center" style={{ position: "absolute", bottom: "40px", left: "0", right: "0" }}>
-                <a target="_blank" className="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 w-full" href="https://wa.me/87085362570">
+                <a target="_blank" className="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 w-full" href="https://pay.kaspi.kz/pay/umevm4we">
                     <svg fill="currentColor" height="32px" width="32px" className="text-muted-foreground" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 308 308" stroke="#1b932f">
                         <g id="SVGRepo_bgCarrier"></g>
                         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
