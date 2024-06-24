@@ -52,10 +52,6 @@ export const Sidebar = () => {
                         </div>
                     </div>
                 </div> 
-
-            <div style={{ position: "absolute", bottom: "10px", left: "0", right: "0", textAlign: "center", color: "#555", fontSize: "0.75rem" }}>
-                © 2024 Divergents. All rights reserved.
-            </div>
         </div>
     );
 }
